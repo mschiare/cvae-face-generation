@@ -21,6 +21,8 @@ This repository contains a **PyTorch implementation of a Conditional Variational
 │   ├── Train_CVAE.py           # Main script for model training and hyperparameter setup
 │   ├── GenerateFaces.py        # Core inference and random latent sampling functions
 │   └── GenerateFaces_esame.py  # Simplified script for rapid generation during exam review
+├── weigths/
+│   ├── weights.pth             # Weigths
 
 └── README.md                   # Project documentation
 ```
