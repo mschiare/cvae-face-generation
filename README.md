@@ -22,7 +22,7 @@ This repository contains a **PyTorch implementation of a Conditional Variational
 │   ├── GenerateFaces.py        # Core inference and random latent sampling functions
 │   └── GenerateFaces_esame.py  # Simplified script for rapid generation during exam review
 ├── weigths/
-│   ├── weights.pth             # Weigths
+│   └── weights.pth             # Weigths
 
 └── README.md                   # Project documentation
 ```
