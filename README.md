@@ -28,9 +28,9 @@ This repository contains a **PyTorch implementation of a Conditional Variational
 ## 🧠 Technical Overview
 
 ### Model Architecture
-- **Encoder**: Built with 4 convolutional layers (`Conv2d`) with alternating `BatchNorm2d` and `LeakyReLU` activations[cite: 6]. Before entering the Encoder, the 3 binary condition attributes are reshaped and spatially expanded to match the image dimensions ($64 \times 64$) and concatenated channel-wise with the input image. The network then outputs the mean ($\mu$) and log-variance ($\log\sigma$) vectors used for the *reparameterization trick*.
+- **Encoder**: Built with 4 convolutional layers (`Conv2d`) with alternating `BatchNorm2d` and `LeakyReLU` activations. Before entering the Encoder, the 3 binary condition attributes are reshaped and spatially expanded to match the image dimensions ($64 \times 64$) and concatenated channel-wise with the input image. The network then outputs the mean ($\mu$) and log-variance ($\log\sigma$) vectors used for the *reparameterization trick*.
 - **Latent Space**: The latent dimension is set to `128`.
-- **Decoder**: Receives a sampled latent vector $z$ directly concatenated with the raw condition attributes[cite: 6]. Through 4 transposed convolutional layers (`ConvTranspose2d`), it reconstructs the original $64 \times 64 \times 3$ image size, ending with a `Sigmoid` activation.
+- **Decoder**: Receives a sampled latent vector $z$ directly concatenated with the raw condition attributes. Through 4 transposed convolutional layers (`ConvTranspose2d`), it reconstructs the original $64 \times 64 \times 3$ image size, ending with a `Sigmoid` activation.
 
 ### Loss Function & Optimization
 - **Beta-VAE Loss**: A tailored loss function combining reconstruction error (`BCELoss`) and Kullback-Leibler Divergence (`KL Divergence`), weighted by a hyperparameter $\beta$. This setup ensures that the model minimizes the reconstruction error while simultaneously forcing the latent space to approximate a standard normal distribution, enabling smooth and high-quality face generation from random noise.
